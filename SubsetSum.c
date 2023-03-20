@@ -1,5 +1,7 @@
+/*
+Gita Gliaudytė, 2023
+*/
 #include <stdio.h>
-
 
 void printSubset(int subset[], int size){
     printf("{");
@@ -33,14 +35,14 @@ int main()
 {
     int set_size;
 
-    printf("Iveskite kiek skaiciu yra aibeje:\n");
+    printf("Enter the number of set elements:\n");
     scanf("%d", &set_size);
 
     if(set_size > 0){
 
         int set[set_size];
 
-        printf("Iveskite aibeje esancius(i) %d skaicius(iu):\n", set_size);
+        printf("Enter %d elements of your set:\n", set_size);
         for(int i = 0; i < set_size; ++i){
             scanf("%d", &set[i]);
         }
@@ -49,15 +51,15 @@ int main()
         int subset_size = 0;
 
         if(isSubsetSum(set, set_size, 0, subset, subset_size))
-            printf("Sioje aibeje yra toks poaibis, kurio skaiciu suma lygi 0.\n");
+            printf("There is a subset in which the sum is equal to 0.\n");
         else
-            printf("Sioje aibeje nera tokio poaibio, kurio skaiciu suma lygi 0.\n");
+            printf("There is no subset in which the sum is equal to 0.\n");
 
     }
     else if(set_size == 0)
-        printf("Tuscioje aibeje nerasime tokio poaibio.\n");
+        printf("The set is empty.\n");
     else
-        printf("Aibe negali tureti maziau nei 0 skaiciu.\n");
+        printf("The set cannot have a negative number of elements.\n");
 
     return 0;
 }
